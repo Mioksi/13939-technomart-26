@@ -11,13 +11,16 @@
       </a>
       <div>
         <button type="submit">Поиск</button>
-        <!-- Форма поиска -->
+        <form action="https://echo.htmlacademy.ru" method="get">
+          <label for="search-field">Поиск:</label>
+          <input type="search" name="search" id="search-field">
+        </form>
         <a href="#">Закладки: 0</a>
         <a href="#">Корзина: 10</a>
         <a href="#">Оформить заказ</a>
       </div>
       <div>
-        <span>Интернет-магазин строительных материалов и инструментов для ремонта</span>
+        <p>Интернет-магазин строительных материалов и инструментов для ремонта</p>
         <a href="tel:+78125550555">+7 (812) 555-05-55</a>
         <p>г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8</p>
       </div>
@@ -71,14 +74,69 @@
         </li>
       </ul>
       <h1>Перфораторы</h1>
-      <!-- Разметка фильтров -->
+      <section>
+        <h2>Фильтр каталога</h2>
+        <span>Фильтр:</span>
+        <form action="http://echo.htmlacademy.ru/" method="get">
+          <fieldset>
+            <legend>Цена:</legend>
+            <p>
+              <input type="number" name="min-price" min="0" max="100" placeholder="0" id="min-price-field">
+              <label class="visually-hidden" for="min-price-field">Минимальная цена</label>
+            </p>
+            <p>
+              <input type="number" name="max-price" min="0" max="30000" placeholder="30000" id="max-price-field">
+              <label class="visually-hidden" for="max-price-field">Максимальная цена</label>
+            </p>
+          </fieldset>
+          <fieldset>
+            <legend>Производители:</legend>
+            <ul>
+              <li>
+                <input type="checkbox" name="manufacturers" value="bosh" id="bosh" checked>
+                <label for="bosh">Bosh</label>
+              </li>
+              <li>
+                <input type="checkbox" name="manufacturers" value="interskol" id="interskol">
+                <label for="interskol">Интерскол</label>
+              </li>
+              <li>
+                <input type="checkbox" name="manufacturers" value="makita" id="makita" checked>
+                <label for="makita">Makita</label>
+              </li>
+              <li>
+                <input type="checkbox" name="manufacturers" value="dewalt" id="dewalt">
+                <label for="dewalt">Dewalt</label>
+              </li>
+              <li>
+                <input type="checkbox" name="manufacturers" value="hitachi" id="hitachi">
+                <label for="hitachi">Hitachi</label>
+              </li>
+            </ul>
+          </fieldset>
+          <fieldset>
+            <legend>Питание:</legend>
+            <ul>
+              <li>
+                <input type="radio" name="power" value="batteries" id="battery-power" checked>
+                <label for="battery-power">Аккумуляторные</label>
+              </li>
+              <li>
+                <input type="radio" name="power"  value="ac" id="ac-power">
+                <label for="ac-power">Сетевые</label>
+              </li>
+            </ul>
+          </fieldset>
+          <button type="submit">Показать</button>
+        </form>
+      </section>
       <section>
         <h2>Каталог товаров</h2>
         <div>
           <span>Сортировка:</span>
           <ul>
             <li>
-              <a href="#">По цене</a>
+              <a>По цене</a>
             </li>
             <li>
               <a href="#">По типу</a>
@@ -311,11 +369,11 @@
       </div>
     </footer>
     <section>
-      <h2>Добавление товара</h2>
-      <button type="button">Закрыть</button>
+      <h2 class="visually-hidden">Добавление товара</h2>
       <p>Товар добавлен в корзину!</p>
       <a href="#">Оформить заказ</a>
       <button type="button">Продолжить покупки</button>
+      <button type="button">Закрыть</button>
     </section>
   </body>
 </html>

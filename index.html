@@ -11,7 +11,10 @@
       </a>
       <div>
         <button type="submit">Поиск</button>
-        <!-- Форма поиска -->
+        <form action="https://echo.htmlacademy.ru" method="get">
+          <label for="search-field">Поиск:</label>
+          <input type="search" name="search" id="search-field">
+        </form>
         <a href="#">Закладки: 0</a>
         <a href="#">Корзина: 0</a>
         <a href="#">Оформить заказ</a>
@@ -53,7 +56,7 @@
     </header>
     <main>
       <section>
-        <h2>Ассортимент</h2>
+        <h2 class="visually-hidden">Ассортимент</h2>
         <div>
           <h3>Материалы</h3>
           <a href="#">На любой вкус</a>
@@ -235,7 +238,9 @@
       <section>
         <h2>Контакты</h2>
         <p>Вы можете забрать товар сами, заехав в наш офис:</p>
-        <img src="img/map.jpg" width="300" height="158" alt="Адрес на карте">
+        <a href="#">
+          <img src="img/map.jpg" width="300" height="158" alt="Наш офис по адресу: г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8">
+        </a>
         <a href="#">Заблудились? Напишите нам!</a>
       </section>
     </main>
@@ -308,5 +313,24 @@
         </p>
       </div>
     </footer>
+    <section>
+      <h2 class="visually-hidden">Форма обратной связи</h2>
+      <form action="https://echo.htmlacademy.ru" method="post">
+        <p>
+          <label class="visually-hidden" for="feedback-name">Ваше имя:</label>
+          <input type="text" name="name" id="feedback-name" placeholder="Имя Фамилия">
+        </p>
+        <p>
+          <label class="visually-hidden" for="feedback-email">Ваш e-mail:</label>
+          <input type="email" name="email" id="feedback-email" placeholder="email@example.com">
+        </p>
+        <p>
+          <label class="visually-hidden" for="feedback-message">Текст письма:</label>
+          <textarea name="message" id="feedback-message" cols="30" rows="10" placeholder="В свободной форме"></textarea>
+        </p>
+        <button type="submit">Отправить</button>
+        <button type="button">Закрыть</button>
+      </form>
+    </section>
   </body>
 </html>
