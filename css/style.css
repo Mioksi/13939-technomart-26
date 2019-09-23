@@ -1,3 +1,15 @@
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+.container {
+  width: 940px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -56,21 +68,32 @@ a {
   background-color: #293449;
 }
 
+.main-header-top .container {
+  display: flex;
+}
+
 .logo {
   background-color: #ee3643;
   box-shadow: inset 0 -5px 0 rgba(0, 0, 0, 0.24);
 }
 
-.logo:hover,
-.logo:focus {
+.logo[href]:hover,
+.logo[href]:focus {
   background-color: #ca2c37;
 }
 
-.logo:active {
+.logo[href]:active {
   background-color: #ba2732;
 }
 
-.search-form input{
+.search-form {
+  width: 270px;
+}
+
+.search-form input[type="search"]{
+  width: 100%;
+  box-sizing: border-box;
+  
   font: inherit;
   
   border: none;
@@ -101,6 +124,8 @@ a {
 }
 
 .main-header-button {
+  margin-left: auto;
+  
   color: #ffffff;
 
   background-color: #63a63e;
@@ -121,13 +146,24 @@ a {
   background-color: #f3f7f9;
 }
 
+.main-header-wrapper {
+  display: flex;
+  padding-top: 30px;
+}
+
 .main-title {
+  width: 205px;
   margin: 0;
+  margin-right: 65px;
   
   font-size: 16px;
   font-style: italic;
   line-height: 23px;
   color: #ee3643;
+}
+
+.header-contacts {
+  width: 275px;
 }
 
 .header-contacts a {
@@ -143,6 +179,11 @@ a {
   line-height: 24px;
 
   color: #32425c;
+}
+
+.header-user-block {
+  margin-left: auto;
+  width: 300px;
 }
 
 .user-block-profile {
@@ -167,6 +208,10 @@ a {
 }
 
 .user-block-nav {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  
   font-size: 16px;
   
   list-style: none;
@@ -194,6 +239,8 @@ a {
 }
 
 .main-navigation-list {
+  display: flex;
+  
   list-style: none;
 }
 
@@ -213,8 +260,17 @@ a {
 }
 
 .assortment {
+  display: flex;
+  flex-wrap: wrap;
+
+  margin-bottom: 30px;
+  
   font-family: "Cuprum", Arial, sans-serif;
   color: #ffffff;
+}
+
+.assortment-item {
+  width: 300px;
 }
 
 .assortment-item.materials,
@@ -259,12 +315,21 @@ a {
 }
 
 .slider {
+  width: 620px;
+  
   /* Временно для читабельности */
   background-color: rgba(0, 0, 0, 0.3);
 }
 
 .slider-list {
+  margin: 0;
+  padding: 0;
+
   list-style: none;
+}
+
+.slider-list li:nth-child(2) {
+  display: none;
 }
 
 .slider-list h3 {
@@ -288,15 +353,58 @@ a {
 }
 
 .header-row {
+  display: flex;
+  margin-bottom: 20px;
+  
   background-color: #f9f5f0;
 }
 
 .header-row h2 {
+  margin: 0;
+  
   color: #32425c;
 }
 
+.header-row a {
+  margin-left: auto;
+}
+
+.catalog-wrapper {
+  display: flex;
+}
+
+.filter {
+  margin-right: 20px;
+  width: 220px;
+}
+
+.catalog-inner {
+  width: 700px;
+}
+
 .catalog-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  
   list-style: none;
+}
+
+.catalog-item {
+  margin-right: 20px;
+  margin-bottom: 20px;
+  width: 218px;
+  
+  border: 1px solid #eaeaea;
+}
+
+.catalog-item:nth-child(3n) {
+  margin-right: 0;
+}
+
+.catalog-popular .catalog-item:nth-child(4n) {
+  margin-right: 0;
 }
 
 .catalog-item h3 {
@@ -367,15 +475,30 @@ a {
 }
 
 .manufacturers-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+
   list-style: none;
+}
+
+.manufacturers-item {
+  margin-bottom: 20px;
+  margin-right: 20px;
+}
+
+.manufacturers-item:nth-child(4n) {
+  margin-right: 0;
 }
 
 .manufacturers-list a {
   display: inline-block;
+  vertical-align: top;
   width: 220px;
   height: 145px;
   
-  border: 1px solid #e5e5e5;
+  outline: 1px solid #e5e5e5;
 }
 
 .manufacturers-list a:hover,
@@ -391,7 +514,20 @@ a {
   opacity: 0.5;
 }
 
+.services {
+  background-color: #f4f8f9;
+}
+
+.services-wrapper {
+  display: flex;
+}
+
 .services-list {
+  margin: 0;
+  margin-right: 80px;
+  padding: 0;
+  width: 240px;
+  
   font-family: "Cuprum", Arial, sans-serif;
   font-size: 21px;
   font-weight: 700;
@@ -417,10 +553,21 @@ a {
 }
 
 .services-decription-list {
+  margin: 0;
+  padding: 0;
+  width: 300px;
+  
   list-style: none;
 }
 
+.services-decription-item:nth-child(2),
+.services-decription-item:nth-child(3) {
+  display: none;
+}
+
 .services-decription-item h3{
+  margin: 0;
+  
   font-family: "Cuprum", Arial, sans-serif;
   font-size: 36px;
   font-weight: 400;
@@ -429,10 +576,23 @@ a {
   color: #32425c;
 }
 
+.index-columns {
+  display: flex;
+  justify-content: space-between;
+}
+
+.company-info {
+  width: 540px;
+}
+
 .company-info-list {
   font-family: "Cuprum", Arial, sans-serif;
   font-size: 18px;
   line-height: 20px;
+}
+
+.contacts {
+  width: 300px;
 }
 
 .main-footer {
@@ -445,7 +605,16 @@ a {
   background-color: #32425c;
 }
 
+.main-footer-top {
+  display: flex;
+}
+
 .footer-navigation-list {
+  display: flex;
+  margin: 0;
+  margin-left: auto;
+  padding: 0;
+  
   font-size: 18px;
   line-height: 24px;
 
@@ -466,7 +635,13 @@ a {
   opacity: 0.5;
 }
 
+.main-footer-middle {
+  display: flex;
+}
+
 .main-footer-middle p {
+  width: 325px;
+
   color: #f3f7f9;
 }
 
@@ -479,6 +654,9 @@ a {
 }
 
 .main-footer-bottom {
+  padding-top: 40px;
+  padding-bottom: 30px;
+  
   font-size: 16px;
   line-height: 18px;
   color: #ffffff;
@@ -486,7 +664,22 @@ a {
   background-color: #293449;
 }
 
+.main-footer-bottom .container {
+  display: flex;
+}
+
+.footer-copyright {
+  margin: 0;
+  margin-right: 160px;
+  width: 230px;
+}
+
 .footer-social-list {
+  display: flex;
+  margin: 0;
+  margin-right: 100px;
+  padding: 0;
+  
   list-style: none;
 }
 
@@ -500,6 +693,17 @@ a {
 .footer-social-link:focus,
 .footer-social-link:active {
   background-color: #ee3643;
+}
+
+.footer-feedback {
+  margin: 0;
+  width: 140px;
+}
+
+.footer-development {
+  margin: 0;
+  margin-left: auto;
+  width: 105px;
 }
 
 .footer-feedback a,
@@ -521,11 +725,18 @@ a {
 }
 
 .breadcrumbs {
-  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+
   text-transform: uppercase;
+  
+  list-style: none;
 }
 
 .breadcrumbs-link {
+  padding-right: 15px;
+  
   color: #000000;
 }
 
@@ -540,13 +751,23 @@ a {
   background-color: #f2f6f8;
 }
 
+.catalog-sorting {
+  display: flex;
+}
+
 .sub-title {
-  text-transform: uppercase;
+  margin-right: 135px;
+
   line-height: 18px;
+  text-transform: uppercase;
 }
 
 .catalog-sorting-list,
 .catalog-sorting-arrow {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  
   list-style: none;
 }
 
@@ -590,6 +811,10 @@ a {
 }
 
 .pagination {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  
   text-transform: uppercase;
   
   list-style: none;
@@ -617,12 +842,23 @@ a {
   border: 1px solid #ee3643;
 }
 
+.hammer-drill-info {
+  padding-top: 65px;
+  padding-bottom: 70px;
+  
+  background-color: #f2f6f8;
+}
+
 .hammer-drill-info h2 {
   font-family: "Cuprum", Arial, sans-serif;
   font-size: 30px;
   font-weight: 400;
   line-height: 30px;
   text-transform: uppercase;
+}
+
+.hammer-drill-info p {
+  margin: 0;
 }
 
 .modal-feedback,
