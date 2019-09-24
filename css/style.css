@@ -152,11 +152,12 @@ a {
 }
 
 .main-title {
-  width: 205px;
+  width: 196px;
   margin: 0;
   margin-right: 65px;
   
   font-size: 16px;
+  font-weight: 400;
   font-style: italic;
   line-height: 23px;
   color: #ee3643;
@@ -399,7 +400,7 @@ a {
   border: 1px solid #eaeaea;
 }
 
-.catalog-item:nth-child(3n) {
+.main-catalog .catalog-item:nth-child(3n) {
   margin-right: 0;
 }
 
@@ -558,11 +559,6 @@ a {
   width: 300px;
   
   list-style: none;
-}
-
-.services-decription-item:nth-child(2),
-.services-decription-item:nth-child(3) {
-  display: none;
 }
 
 .services-decription-item h3{
@@ -775,7 +771,7 @@ a {
   text-transform: uppercase;
   color: rgba(0, 0, 0, 0.3);
 
-  border-bottom: 1px dashed #ee3643;
+  border-bottom: 1px dotted #ee3643;
 }
 
 .catalog-sorting-link[href]:hover,
