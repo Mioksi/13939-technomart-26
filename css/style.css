@@ -2280,18 +2280,24 @@ a {
 
 .modal {
   position: fixed;
-  top: 31%;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-      -ms-transform: translateX(-50%);
-          transform: translateX(-50%);
+	top: 50%;
+	left: 50%;
+  z-index: -1;
+  -webkit-transform: translateX(-50%) translateY(0);
+      -ms-transform: translateX(-50%) translateY(0);
+          transform: translateX(-50%) translateY(0);
 
   background-color: #ffffff;
+  opacity: 0;
+
+  -webkit-transition: all 0.3s;
+
+  -o-transition: all 0.3s;
+
+  transition: all 0.3s;
 }
 
 .modal-feedback {
-  z-index: -1;
-  
   -webkit-box-sizing: border-box;
   
           box-sizing: border-box;
@@ -2301,7 +2307,6 @@ a {
   border-top: 7px solid #ff5357;
   -webkit-box-shadow: 0 20px 40px rgba(0, 0, 0, 0.75);
           box-shadow: 0 20px 40px rgba(0, 0, 0, 0.75);
-  opacity: 0;
 }
 
 .feedback-form-wrapper {
@@ -2409,15 +2414,12 @@ a {
 }
 
 .modal-map {
-  z-index: -1;
-
   width: 940px;
   height: 446px;
 
   background-color: #565656;
   -webkit-box-shadow: 0 0 15px 1px rgba(47, 42, 43, 0.5);
           box-shadow: 0 0 15px 1px rgba(47, 42, 43, 0.5);
-  opacity: 0;
 }
 
 .modal .close-button {
@@ -2467,8 +2469,6 @@ a {
 }
 
 .modal-cart {
-  z-index: -1;
-  
   -webkit-box-sizing: border-box;
   
           box-sizing: border-box;
@@ -2480,13 +2480,12 @@ a {
   border-top: 7px solid #ff5357;
   -webkit-box-shadow: 0 20px 40px rgba(41, 52, 73, 0.75);
           box-shadow: 0 20px 40px rgba(41, 52, 73, 0.75);
-  opacity: 0;
 }
 
 .modal-cart-wrapper {
   padding: 0 80px;
   padding-top: 37px;
-  padding-bottom: 32px;
+  padding-bottom: 37px;
 
   background-color: #f4f4f4;
 }
@@ -2510,7 +2509,7 @@ a {
 .modal-cart .continue-button {
   padding-top: 11px;
   padding-right: 12px;
-  padding-bottom: 14px;
+  padding-bottom: 9px;
   padding-left: 12px;
   width: 220px;
 }
@@ -2527,4 +2526,44 @@ a {
   color: #000000;
 
   background-color: #ffffff;
+}
+
+.modal-show {
+  z-index: 2;
+  -webkit-transform: translateX(-50%) translateY(-70%);
+      -ms-transform: translateX(-50%) translateY(-70%);
+          transform: translateX(-50%) translateY(-70%);
+
+  opacity: 1;
+}
+
+@-webkit-keyframes flash {
+  from,
+  50%,
+  to {
+    opacity: 1;
+  }
+
+  25%,
+  75% {
+    opacity: 0;
+  }
+}
+
+@keyframes flash {
+  from,
+  50%,
+  to {
+    opacity: 1;
+  }
+
+  25%,
+  75% {
+    opacity: 0;
+  }
+}
+
+.input-error {
+  -webkit-animation: flash 0.6s;
+          animation: flash 0.6s;
 }
