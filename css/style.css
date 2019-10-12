@@ -2462,6 +2462,10 @@ a {
           transform: rotate(-45deg);
 }
 
+.modal-map .close-button {
+  z-index: 2;
+}
+
 .modal-map-image {
   display: block;
   width: 940px;
@@ -2566,4 +2570,8 @@ a {
 .input-error {
   -webkit-animation: flash 0.6s;
           animation: flash 0.6s;
+}
+
+.map-hide {
+  display: none;
 }

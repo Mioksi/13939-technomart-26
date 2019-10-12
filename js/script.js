@@ -84,6 +84,25 @@ if (indexPage) {
       }
     }
   });
+
+  var mapImage = document.querySelector('.modal-map-image');
+
+  ymaps.ready(init);
+  function init () {
+    mapImage.classList.add('map-hide');
+    
+    var myMap = new ymaps.Map('yandexmap', {
+      center: [59.938900, 30.323055],
+      zoom: 16
+    }),
+  
+    myPlacemark = new ymaps.Placemark([59.938630, 30.323055], {
+      hintContent: 'Магазин Техномарт'
+    })
+    
+    myMap.geoObjects.add(myPlacemark);
+    myMap.behaviors.disable('scrollZoom');
+  };
 }
 
 var catalog = document.querySelector('.catalog-list');
