@@ -103,6 +103,70 @@ if (indexPage) {
     myMap.geoObjects.add(myPlacemark);
     myMap.behaviors.disable('scrollZoom');
   };
+
+  var slides = document.querySelectorAll('.slider-item');
+  var previousButton = document.querySelector('.slider-arrow-left');
+  var nextButton = document.querySelector('.slider-arrow-right');
+  var controlsRadio = document.querySelectorAll('.slider-radio-control');
+  var previousSlide = 0;
+  var currentSlide = 0;
+
+  var getArrowButtonSlide = function (i) {
+    previousSlide = currentSlide;
+    currentSlide = (i + slides.length) % slides.length;
+    changeActiveSlide();
+  };
+
+  nextButton.addEventListener('click', function () {
+    getArrowButtonSlide(currentSlide + 1);
+  });
+
+  previousButton.addEventListener('click', function () {
+    getArrowButtonSlide(currentSlide - 1);
+  });
+
+  var getRadioButtonSlide = function (i) {
+    controlsRadio[i].addEventListener('click', function () {
+      previousSlide = currentSlide;
+      currentSlide = i;
+      changeActiveSlide();
+    });
+  };
+
+  for (var i=0; i<controlsRadio.length; i++) {
+    getRadioButtonSlide(i);
+  }
+
+  var changeActiveSlide = function () {
+    slides[previousSlide].classList.remove('slider-item-active');
+    slides[currentSlide].classList.add('slider-item-active');
+    controlsRadio[previousSlide].classList.remove('slider-radio-control-active');
+    controlsRadio[currentSlide].classList.add('slider-radio-control-active');
+  };
+
+  var servicesItem = document.querySelectorAll('.services-decription-item');
+  var servicesButton = document.querySelectorAll('.services-button');
+  var previousItem = 0;
+  var currentItem = 0;
+
+  var getTabButtonItem = function (i) {
+    servicesButton[i].addEventListener('click', function () {
+      previousItem = currentItem;
+      currentItem = i;
+      changeActiveItem();
+    });
+  };
+
+  for (var i=0; i<servicesButton.length; i++) {
+    getTabButtonItem(i);
+  }
+
+  var changeActiveItem = function () {
+    servicesItem[previousItem].classList.remove('decription-item-active');
+    servicesItem[currentItem].classList.add('decription-item-active');
+    servicesButton[previousItem].classList.remove('services-button-active');
+    servicesButton[currentItem].classList.add('services-button-active');
+  };
 }
 
 var catalog = document.querySelector('.catalog-list');
