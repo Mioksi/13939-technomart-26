@@ -1,6 +1,5 @@
 var indexPage = document.querySelector('.index-page');
 
-
 if (indexPage) {
   var mapLink = document.querySelector('.contacts-map-link');
 
@@ -108,8 +107,8 @@ if (indexPage) {
   var previousButton = document.querySelector('.slider-arrow-left');
   var nextButton = document.querySelector('.slider-arrow-right');
   var controlsRadio = document.querySelectorAll('.slider-radio-control');
-  var previousSlide = 0;
-  var currentSlide = 0;
+  var previousSlide = 1;
+  var currentSlide = 1;
 
   var getArrowButtonSlide = function (i) {
     previousSlide = currentSlide;

@@ -13,6 +13,7 @@ html {
 body {
   margin: 0;
   padding: 0;
+  min-width: 960px;
     
   font-family: "PT Sans", Arial, sans-serif;
   font-size: 13px;
@@ -117,10 +118,14 @@ a {
 .logo[href]:hover,
 .logo[href]:focus {
   background-color: #ca2c37;
+  -webkit-box-shadow: 0 5px 0 0 #9a212a;
+          box-shadow: 0 5px 0 0 #9a212a;
 }
 
 .logo[href]:active {
   background-color: #ba2732;
+  -webkit-box-shadow: 0 5px 0 0 #8d1e26;
+          box-shadow: 0 5px 0 0 #8d1e26;
 }
 
 .search-form {
@@ -419,6 +424,11 @@ a {
   color: #ee3643;
 }
 
+.user-link-profile:hover,
+.user-link-profile:focus {
+  color: #000000;
+}
+
 .user-link:hover svg,
 .user-link:focus svg {
   fill: #32425c;
@@ -686,6 +696,7 @@ a {
 .assortment-item h3 {
   margin: 0;
   margin-bottom: 12px;
+  width: 165px;
   
   font-size: 24px;
   font-weight: 700;
@@ -892,7 +903,7 @@ a {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  margin-bottom: 60px;
+  margin-bottom: 55px;
 }
 
 .catalog-inner {
@@ -1165,7 +1176,9 @@ a {
   margin-right: 0;
 }
 
-.manufacturers-list a {
+.manufacturers-link {
+  position: relative;
+  
   display: inline-block;
   vertical-align: top;
   width: 220px;
@@ -1174,20 +1187,31 @@ a {
   outline: 1px solid #eaeaea;
 }
 
-.manufacturers-list a:hover,
-.manufacturers-list a:focus {
+.manufacturers-link::before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  
+  width: 220px;
+  height: 145px;
+}
+
+.manufacturers-link:hover,
+.manufacturers-link:focus {
   -webkit-box-shadow: 0 10px 25px rgba(41, 52, 73, 0.5);
           box-shadow: 0 10px 25px rgba(41, 52, 73, 0.5);
   outline: none;
 }
 
-.manufacturers-list a:active {
+.manufacturers-link:active {
   -webkit-box-shadow: 0 4px 10px rgba(41, 52, 73, 0.5);
           box-shadow: 0 4px 10px rgba(41, 52, 73, 0.5);
 }
 
-.manufacturers-list img:active {
-  opacity: 0.5;
+.manufacturers-link:active img {
+  opacity: 0.3;
 }
 
 .services {
@@ -1354,6 +1378,9 @@ a {
 }
 
 .services-decription-text {
+  position: relative;
+  z-index: 1;
+  
   margin: 0;
 }
 
@@ -1405,8 +1432,8 @@ a {
 
 .company-info-delivery {
   margin: 0;
-  margin-right: 95px;
   margin-bottom: 21px;
+  padding-right: 95px;
 }
 
 .company-info-list {
@@ -1461,8 +1488,8 @@ a {
 
 .contacts-text {
   margin: 0;
-  margin-right: 85px;
   margin-bottom: 31px;
+  padding-right: 85px;
 }
 
 .contacts-map-link {
@@ -1705,6 +1732,8 @@ a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   margin: 0;
   padding: 0;
 
@@ -2146,14 +2175,14 @@ a {
   border-bottom: 1px dotted #ee3643;
 }
 
-.catalog-sorting-link:hover,
-.catalog-sorting-link:focus {
+.catalog-sorting-link[href]:hover,
+.catalog-sorting-link[href]:focus {
   color: #000000;
 
   border-bottom: 1px solid #ee3643;
 }
 
-.catalog-sorting-link:focus:active {
+.catalog-sorting-link[href]:active {
   color: #ee3643;
 
   border: none;
@@ -2179,23 +2208,37 @@ a {
 }
 
 .catalog-sorting-arrow a {
+  position: relative;
+
   display: inline-block;
   vertical-align: top;
   
   color: #c5c5c5;
 }
 
+.catalog-sorting-arrow a::before {
+  content: "";
+  
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  display: block;
+}
+
 .sorting-arrow-button path {
   fill: #c5c5c5;
 }
 
-.sorting-arrow-button:hover path,
-.sorting-arrow-button:focus path {
+.sorting-arrow-button[href]:hover path,
+.sorting-arrow-button[href]:focus path {
   fill: #231f20;
 }
 
 .sorting-arrow-active path,
-.sorting-arrow-button:active path {
+.sorting-arrow-button[href]:active path {
   fill: #ee3643;
 }
 
@@ -2207,6 +2250,8 @@ a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   margin: 0;
   padding: 0;
   
@@ -2218,6 +2263,7 @@ a {
 
 .pagination li {
   margin-right: 10px;
+  margin-bottom: 5px;
 }
 
 .pagination-link {
@@ -2379,6 +2425,15 @@ a {
 
 .input-area::placeholder {
   color: #a9a9a9;
+}
+
+.input-area:hover {
+  border: 2px solid #b5b5b5;
+}
+
+.input-area:focus {
+  border: 2px solid #ee3643;
+  outline: none;
 }
 
 .feedback-form input[type="text"],
